@@ -1,8 +1,8 @@
 # useful_code
-A Collection Of Useful Ruby And Rails Code Snippets
+A Collection Of Useful Ruby And Rails methods.
 
 ####Summary:  
-Copy these snippets of code directly to the top of your Ruby script, or for Rails put them in application.rb.
+Copy these methods directly to the top of your Ruby script, or for Rails put them in application.rb.
 
 Yes, folks, some of these use so-called "monkey patching". Ruby's class extensibility has gotten a bad rap. Yes, it can get you into trouble if you're not careful, but knee-jerk shunning it is like saying you should never drive a car because you might hit a tree. These are fairly innocuous methods which shouldn't hurt anything.
 
@@ -37,9 +37,9 @@ h.nullify!
 Seconds as integer or float, optional integer decimal places for including fractional seconds.
 
 *Typical Use Case:*  
-Often, especially in long-running scripts, you want to periodically output elapsed time or estimated time for compeletion (ETC). This will help you with that.
+Often in long-running scripts, you want to periodically output elapsed time or estimated time for compeletion (ETC). This will help you with that.
 
-Some people use Time.at() for this, but at 24 hours that rolls over to 0, making it useless for longer time periods.
+Some people use Time.at() but at 24 hours that rolls over to 0, making it useless for longer time periods.
 
 
 *Returns:*  
