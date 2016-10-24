@@ -86,10 +86,12 @@ end
 ## Use:   my_record.nullify!
 class ActiveRecord::Base
   def nullify!
+    ## Doesn't work to assign attribute values directly in the loop, so we reference it.
     attrib = attributes
     attrib.each do |key, value|
       attrib[key] = nil if value && value.blank?
     end
+    ## Assign the new attribute values to the object.
     self.attributes = attrib
   end
 end
