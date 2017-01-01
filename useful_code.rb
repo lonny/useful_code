@@ -20,7 +20,7 @@ class Time
   ## 'hms' converts seconds into HH:MM:SS or HH:MM:SS.ss format.
   ## Seconds are rounded to optional 'decimals' places, default 0 (integer).
   ## 'decimals' limited to 8 due to floating point error. Better to use 6 or fewer.
-  ## Uses:
+  ## Typical use:
   ## Time.hms(9234.5612)    #=> "00:20:35"
   ## Time.hms(9234.5612, 2) #=> "00:20:34.56"
   def self.hms(seconds, decimals = 0)
