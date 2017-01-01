@@ -24,14 +24,15 @@ class Time
   ## Time.hms(9234.5612)    #=> "00:20:35"
   ## Time.hms(9234.5612, 2) #=> "00:20:34.56"
   def self.hms(seconds, decimals = 0)
-    decs  = [decimals, 8].min
     int   = seconds.floor
+    decs  = [decimals, 8].min
     frac  = seconds - int
-    hh    = (int / 3600).to_s.rjust(2, '0')
-    mm    = ((int / 60) % 60).to_s.rjust(2, '0')
-    secs  = int % 60
-    ss    = (decimals == 0) ? secs : (secs + frac).round(decimals).to_s.rjust(2, '0')
-    "#{hh}:#{mm}:#{ss}"
+    hms   = [int / 3600, (int / 60) % 60, int % 60].map { |t| t.to_s.rjust(2,'0') }.join(':')
+    if decs > 0
+      fp = (frac == 0) ? '.00' : "#{frac.round(decs)}"[1..-1]
+      hms  << fp
+    end
+    hms
   end
 end
 
