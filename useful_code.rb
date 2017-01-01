@@ -30,7 +30,11 @@ class Time
     hh    = (int / 3600).to_s.rjust(2, '0')
     mm    = ((int / 60) % 60).to_s.rjust(2, '0')
     secs  = int % 60
-    ss    = (secs + frac).round(decimals).to_s.rjust(2, '0')
+    if decimals == 0
+      ss = secs
+    else
+      ss = (secs + frac).round(decimals).to_s.rjust(2, '0')
+    end
     "#{hh}:#{mm}:#{ss}"
   end
 end
