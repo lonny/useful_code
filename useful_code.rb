@@ -82,12 +82,14 @@ end
 #############################################################################################
 
 ## Instance method for ActiveRecord objects.
-## Returns the same object with empty (e.g., "", "  ") values changed to nil.
+## Returns the same object with empty (e.g., "", "   ") values changed to nil.
 ## Note: NO RETURN VALUE. Object is modified in place, thus the "!" name.
 ## Use:   my_record.nullify!
+## Note: the "if value" condition is there for a reason.
 class ActiveRecord::Base
   def nullify!
-    ## Doesn't work to assign attribute values directly in the loop, so we reference it.
+    ## Doesn't work to assign "value" directly in the loop. (Try it!)
+    ## So we reference the parent object instead.
     attrib = attributes
     attrib.each do |key, value|
       attrib[key] = nil if value && value.blank?
