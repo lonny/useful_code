@@ -88,6 +88,9 @@ x.frac(3)
 #=> 0.123
 ```
 
+**Note:** It has come to my attention that Ruby's BigDecimal type already has a `frac` method.
+So use this only for floats. If you need to prevent rounding errors use BigDecimal instead.
+
 ****
 ****
 **String#capostrophe**
