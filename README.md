@@ -61,7 +61,7 @@ Time.hms(8765432)
 
 ****
 ****
-**Float#frac(decimals = 10)**
+**Float#frac(decimals = 8)**
 ****
 *Typical Use Case:*
 You're tired of manually writing inline code to get numbers to the right of the decimal point.
